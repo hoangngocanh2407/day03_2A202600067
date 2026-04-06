@@ -28,7 +28,7 @@ def _normalize_category(raw_category: str) -> str:
 
 - **Problem Description**: Thống kê danh mục UI bị phá vỡ vì sự xuất hiện của rất nhiều loại danh mục trùng hình thái ngữ nghĩa như: "Xăng", "Xăng xe", "Di chuyển bằng Grab", "Đi lại".
 - **Diagnosis**: Dù Prompt quy định rõ là LLM phải truyền danh mục chuẩn, đôi khi LLM vẫn ngẫu nhiên điền nguyên chữ của người dùng (như "Xăng xe") vào tham số `category` của hàm. Bản tính ngẫu nhiên của Generation Models gây nhiễu loạn CSDL của một ứng dụng phần mềm truyền thống.
-- **Solution**: Em không thèm tin tưởng LLM. Thiết kế một hàm nội bộ truyền thống `_normalize_category`, duyệt vòng lặp bắt keyword để ép cứng bất cứ category gì rác rưởi vào 7 danh mục tổng quan vững chãi.
+- **Solution**: Thiết kế một hàm nội bộ truyền thống `_normalize_category`, duyệt vòng lặp bắt keyword để ép cứng bất cứ category gì rác rưởi vào 7 danh mục tổng quan vững chãi.
 
 ---
 
